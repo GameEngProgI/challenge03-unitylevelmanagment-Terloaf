@@ -5,6 +5,8 @@ public class LevelChangeTrigger : MonoBehaviour
 
     public LevelManager levelManager;
 
+    public GameObject levelToActivate;
+    public Transform spawnLocation;
 
     private void Start()
     {
@@ -17,7 +19,7 @@ public class LevelChangeTrigger : MonoBehaviour
         {
             Debug.Log("collide");
 
-            levelManager.LevelChange();
+            levelManager.LevelChange(spawnLocation, other.gameObject);
         }
     }
 
